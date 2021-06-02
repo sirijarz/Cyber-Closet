@@ -1,13 +1,12 @@
 import cv2
 import imutils
-
 import numpy as np
-import CollectionOfTops as cc
+import CollectionOfJewellery as cc
 import random
 
 def fashion():
     video = cv2.VideoCapture(0)
-    images = cc.loadTops()
+    images = cc.loadJewellery()
     thres = [130, 40, 75, 130]
     size = 180
     currentClothId = 1
@@ -25,12 +24,13 @@ def fashion():
                 # only works if circle of radius 30 exists
                 if r > 30:
                     # draw circle and center of circle contour
-                    cv2.circle(frame_to_try, (x, y), r, (0, 255, 0), 4)
+                    #image = cv2.circle(image, center_coordinates, radius, color, thickness)
+                    cv2.circle(frame_to_try, (x-220, y-100), r, (0, 255, 0), 1)
                     cv2.rectangle(frame_to_try, (x - 5, y - 5), (x + 5, y + 5), (0, 128, 255), -1)
                     # adjust size of tshirt according to radius of circle
-                    size = r * 7
-        if size > 350:
-            size = 350
+                    size = r
+        if size > 250:
+             size = 350
         elif size < 100:
             size = 100
 
@@ -40,7 +40,7 @@ def fashion():
         f_width = frame_to_try.shape[1]
         t_height = top.shape[0]
         t_width = top.shape[1]
-        height = int(f_height / 2 - t_height / 2)
+        height = int(f_height / 2 - t_height / 2 )
         width = int(f_width / 2 - t_width / 2)
         rows, cols, channels = top.shape
         topGray = cv2.cvtColor(top, cv2.COLOR_BGR2GRAY)

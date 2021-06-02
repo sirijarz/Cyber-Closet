@@ -1,7 +1,7 @@
 import os
 import cv2
-def loadTops():
-    folder = "tops"
+def loadBottoms():
+    folder = "bottoms"
     images = []
     thres = [40, 75, 130, 130]
     for filename in os.listdir(folder):
