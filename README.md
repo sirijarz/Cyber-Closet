@@ -1,4 +1,4 @@
-# Cyber-Closet
+# Cyber-Closet- A Virtual Trial Room
 a webcam-based system that detects the users body and superimposes the clothing,possible by the application of augmented reality &amp; computer vision. Shoppers get a remarkably accurate picture of how apparel will look and fit on them in real time.
 # How it exactly works? 
 ![Screenshot from 2021-05-24 20-28-29](https://user-images.githubusercontent.com/57829377/141171544-dfae5e81-94c1-4778-a11f-80e6ff8bcb2e.png)
